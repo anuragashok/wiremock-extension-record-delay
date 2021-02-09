@@ -14,3 +14,10 @@ jobs:
         run: mvn -B deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload asset to release
+        uses: gacts/upload-to-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: './target/wiremock-extension-record-delay*jar'
+          type: 'application/java-archive'
