@@ -11,7 +11,8 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "target/*.jar"
+          allowUpdates: true
+          artifacts: "${{env.GITHUB_WORKSPACE}}/target/*.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Java for publishing to Maven Central Repository
         uses: actions/setup-java@v1
