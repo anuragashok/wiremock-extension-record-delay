@@ -19,5 +19,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: './target/wiremock-extension-record-delay-${{RELEASE_ID}}.jar'
+          file: "./target/wiremock-extension-record-delay-$RELEASE_ID.jar"
           type: 'application/java-archive'
