@@ -2,7 +2,35 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.anuragashok</groupId>
   <artifactId>wiremock-extension-record-delay</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
+  <packaging>jar</packaging>
+
+  <name>wiremock-extension-record-delay</name>
+  <description>set of wiremock extensions to capture delay during recording/snapshotting</description>
+  <url>https://github.com/anuragashok/wiremock-extension-record-delay</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Anurag Ashok</name>
+      <email>anurag@anuragashok.com</email>
+      <organization>anuragashok</organization>
+      <organizationUrl>https://github.com/anuragashok</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/anuragashok/wiremock-extension-record-delay.git</connection>
+    <developerConnection>scm:git:ssh://github.com:anuragashok/wiremock-extension-record-delay.git</developerConnection>
+    <url>https://github.com/anuragashok/wiremock-extension-record-delay/tree/main</url>
+  </scm>
+
 
   <properties>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -22,7 +50,26 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>attach-javadoc</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-source</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
