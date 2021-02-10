@@ -14,10 +14,9 @@ jobs:
         run: mvn -B deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload asset to release
-        uses: gacts/upload-to-release@master
+      - name: Upload release binaries
+        uses: alexellis/upload-assets@0.2.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          file: "./target/wiremock-extension-record-delay-${{env.GITHUB_REF}}.jar"
-          type: 'application/java-archive'
+          asset_paths: '["./target/wiremock-extension-record-delay-*.jar"]'
