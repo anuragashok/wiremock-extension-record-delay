@@ -31,3 +31,5 @@ Example:
 wm.stubFor(post(urlMatching("/abc")).atPriority(1)
         .willReturn(aResponse().withTransformers(RecordDelay.getExtensionClassNames()).proxiedFrom("https://www.xyz.com"))))
 ```
+
+Updated
